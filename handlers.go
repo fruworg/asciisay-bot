@@ -38,6 +38,6 @@ func (a *application) msgHandler(m *tbot.Message) {
 	topLine := fmt.Sprintf(" %s ", strings.Repeat("_", lineLen))
 	textLine := fmt.Sprintf("< %s >", text)
 	bottomLine := fmt.Sprintf(" %s ", strings.Repeat("-", lineLen))
-	msg := fmt.Sprintf("```%s\n%s\n%s%s```", topLine, textLine, bottomLine, fruw[pig])
+	msg := fmt.Sprintf("```%s\n%s\n%s%s```", topLine, textLine, bottomLine, fruw[cow])
 	a.client.SendMessage(m.Chat.ID, msg, tbot.OptParseModeMarkdown)
 }
