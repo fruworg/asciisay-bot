@@ -21,7 +21,6 @@ func (a *application) startHandler(m *tbot.Message) {
 
 // Handle the msg command here
 func (a *application) msgHandler(m *tbot.Message) {
-	c := bot.Client()
 	text := strings.TrimPrefix(m.Text, "cowsay ")
 	cow := fmt.Sprintf("```\n%s\n```", text)
 	lineLen := utf8.RuneCountInString(text) + 2
