@@ -48,8 +48,7 @@ func (a *application) msgHandler(m *tbot.Message) {
 	./  / /\ \   | \ \  \ \ 
 	   / /  \ \  | |\ \  \7
  	   "     "    "  "     
-	`	
-	}
+	`}
 	msg := ""
 	arr := strings.Split(m.Text, " ")
     	animal := arr[0]
