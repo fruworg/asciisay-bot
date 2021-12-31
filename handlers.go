@@ -74,8 +74,7 @@ func (a *application) msgHandler(m *tbot.Message) {
 	  jgs |   '-.   /     / 
 	_,..._|      )_-\ \_=.\
        '-....-''------)))'=-'"''"
-	`
-	}
+	`}
 	msg := ""
 	arr := strings.Split(m.Text, " ")
     	animal := arr[0]
