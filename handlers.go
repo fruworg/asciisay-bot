@@ -36,6 +36,5 @@ func (a *application) msgHandler(m *tbot.Message) {
                ||     ||
 	`
 	msg := fmt.Sprintf("%s\n%s\n%s%s", topLine, textLine, bottomLine, cow)
-	c.SendMessage(m.Chat.ID, cow, tbot.OptParseModeMarkdown)
 	a.client.SendMessage(m.Chat.ID, msg, tbot.OptParseModeMarkdown)
 }
