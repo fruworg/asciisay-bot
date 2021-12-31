@@ -78,7 +78,8 @@ func (a *application) msgHandler(m *tbot.Message) {
 	msg := ""
 	arr := strings.Split(m.Text, " ")
     	animal := arr[0]
-	if fruw[animal] != "" || arr[1] != ""{
+	fmt.Println(arr[1])
+	if fruw[animal] != ""{
 		reply := fruw[animal]
 		text := strings.TrimPrefix(m.Text, animal + " ")
 		lineLen := utf8.RuneCountInString(text) + 2
