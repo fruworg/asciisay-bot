@@ -48,7 +48,7 @@ func (a *application) msgHandler(m *tbot.Message) {
 	./  / /\ \   | \ \  \ \ 
 	   / /  \ \  | |\ \  \7
  	   "     "    "  "     
-	`}	
+	`,	
 		"bat": `
 	 /\   \             /\
 	/ \'._ \ (\_/)   _.'/ \
