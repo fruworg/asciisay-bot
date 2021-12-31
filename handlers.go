@@ -10,12 +10,7 @@ import (
 
 // Handle the /start command here
 func (a *application) startHandler(m *tbot.Message) {
-	msg := "\n*Привет!* Присылай сообщение и я его переведу.\n\nДля обычного текста:\n*en**ru*Hello, World!" +
-		"\nДля текста на фотографии:\n*en**ru*https://website.com/file\n\nГде *en* - это язык текста, " +
-		"а *ru* - язык перевода.\nДля *OCR* без перевода используй одинаковые языки.\n\nКоды языков:\n*ru* - Русский; " +
-		"*en* - Английский; *ar* - Арабский; *zh* - Китайский; \n*fr* - Французкий; *de* - Немецкий; *hi* - Индийский; " +
-		"\n*id* - Индонезийский; *ga* - Ирландский; *it* - Итальянский; \n*ja* - Японский; *ko* - Корейский; " +
-		"*pl* - Польский; *pt* - Португальский; \n*es* - Испанский; *tr* - Турецкий; *vi* - Вьетнамский."
+	msg := "бебра?"
 	a.client.SendMessage(m.Chat.ID, msg, tbot.OptParseModeMarkdown)
 }
 
