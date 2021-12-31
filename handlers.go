@@ -23,7 +23,7 @@ func (a *application) msgHandler(m *tbot.Message) {
             (__)\       )\/\
                ||----w |
                ||     ||
-	`
+	`,
 		pig : `
         \   <'--'\>______
          \  /. .  ''     \
