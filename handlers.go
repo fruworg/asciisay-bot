@@ -65,7 +65,7 @@ func (a *application) msgHandler(m *tbot.Message) {
 	 |   o   o   |
 	 \  .-'''-.  /
  	  '-\__Y__/-'
-  	     `---`
+  	     '---'
 	`, 	
 		"beaver": `
 	          .="   "=._.---.
