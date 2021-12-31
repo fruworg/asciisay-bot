@@ -34,15 +34,17 @@ func (a *application) msgHandler(m *tbot.Message) {
               ''''  ''''
 	`}
 	
-	text := strings.TrimPrefix(m.Text, "cowsay ")
+	arr := strings.Split(m.Text, " ")
+    	fam := arr[0]
+	text := strings.TrimPrefix(m.Text, fam + " ")
 	lineLen := utf8.RuneCountInString(text) + 2
 	topLine := fmt.Sprintf(" %s ", strings.Repeat("_", lineLen))
 	textLine := fmt.Sprintf("< %s >", text)
 	bottomLine := fmt.Sprintf(" %s ", strings.Repeat("-", lineLen))
-	if fruw["pig"] != ""{
-		reply = fruw["pig"]
+	if fruw[animal] != ""{
+		reply = fruw[animal]
 	} else { 
-		reply = "нюхни бебры, друг"
+		reply = fruw["pig"]
 	}
 	msg := fmt.Sprintf("```%s\n%s\n%s%s```", topLine, textLine, bottomLine, reply)
 	a.client.SendMessage(m.Chat.ID, msg, tbot.OptParseModeMarkdown)
