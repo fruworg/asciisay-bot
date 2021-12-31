@@ -16,11 +16,6 @@ func (a *application) startHandler(m *tbot.Message) {
 
 // Handle the msg command here
 func (a *application) msgHandler(m *tbot.Message) {
-	text := strings.TrimPrefix(m.Text, "cowsay ")
-	lineLen := utf8.RuneCountInString(text) + 2
-	topLine := fmt.Sprintf(" %s ", strings.Repeat("_", lineLen))
-	textLine := fmt.Sprintf("< %s >", text)
-	bottomLine := fmt.Sprintf(" %s ", strings.Repeat("-", lineLen))
 	cow := `
         \   ^__^
          \  (oo)\_______
@@ -28,6 +23,20 @@ func (a *application) msgHandler(m *tbot.Message) {
                ||----w |
                ||     ||
 	`
-	msg := fmt.Sprintf("```%s\n%s\n%s%s```", topLine, textLine, bottomLine, cow)
+	pig := `
+        \   <`--'\>______
+         \  /. .  `'     \
+           (`')  ,        @
+            `-._,        /
+               )-)_/--( >  jv
+              ''''  ''''
+	`
+	
+	text := strings.TrimPrefix(m.Text, "cowsay ")
+	lineLen := utf8.RuneCountInString(text) + 2
+	topLine := fmt.Sprintf(" %s ", strings.Repeat("_", lineLen))
+	textLine := fmt.Sprintf("< %s >", text)
+	bottomLine := fmt.Sprintf(" %s ", strings.Repeat("-", lineLen))
+	msg := fmt.Sprintf("```%s\n%s\n%s%s```", topLine, textLine, bottomLine, pig)
 	a.client.SendMessage(m.Chat.ID, msg, tbot.OptParseModeMarkdown)
 }
