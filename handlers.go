@@ -25,9 +25,9 @@ func (a *application) msgHandler(m *tbot.Message) {
 	`
 	pig := `
         \   <'--'\>______
-         \  /. .  `'     \
+         \  /. .  ''     \
            ('')  ,        @
-            `-._,        /
+            '-._,        /
                )-)_/--( >  jv
               ''''  ''''
 	`
