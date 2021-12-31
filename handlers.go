@@ -18,14 +18,14 @@ func (a *application) startHandler(m *tbot.Message) {
 func (a *application) msgHandler(m *tbot.Message) {
 	reply := ""
 	fruw := map[string]string{
-		"cow" : `
+		"cow": `
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
                ||----w |
                ||     ||
 	`,
-		"pig" : `
+		"pig": `
         \   <'--'\>______
          \  /. .  ''     \
            ('')  ,        @
