@@ -35,7 +35,7 @@ func (a *application) msgHandler(m *tbot.Message) {
 		"cat": `
    	\   |\---/|
    	 \ ( o_o  )
-		\_'__/-..----.
+            \_'__/-..----.
  	   ___/ '   ' ,""+ \  sk
 	  (__...'   __\    |'.___.';
   	    (_,...'(_,.'__)/'.....+
@@ -78,7 +78,7 @@ func (a *application) msgHandler(m *tbot.Message) {
 	msg := ""
 	arr := strings.Split(m.Text, " ")
     	animal := arr[0]
-	if fruw[animal] != ""{
+	if fruw[animal] != "" || arr[1] != ""{
 		reply := fruw[animal]
 		text := strings.TrimPrefix(m.Text, animal + " ")
 		lineLen := utf8.RuneCountInString(text) + 2
