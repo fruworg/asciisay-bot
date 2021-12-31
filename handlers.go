@@ -16,7 +16,6 @@ func (a *application) startHandler(m *tbot.Message) {
 
 // Handle the msg command here
 func (a *application) msgHandler(m *tbot.Message) {
-	reply := ""
 	fruw := map[string]string{
 		"cow": `
         \   ^__^
@@ -33,10 +32,10 @@ func (a *application) msgHandler(m *tbot.Message) {
                )-)_/--( >  jv
               ''''  ''''
 	`}
-	
+	reply := ""
 	arr := strings.Split(m.Text, " ")
-    	fam := arr[0]
-	text := strings.TrimPrefix(m.Text, fam + " ")
+    	animal := arr[0]
+	text := strings.TrimPrefix(m.Text, animal + " ")
 	lineLen := utf8.RuneCountInString(text) + 2
 	topLine := fmt.Sprintf(" %s ", strings.Repeat("_", lineLen))
 	textLine := fmt.Sprintf("< %s >", text)
