@@ -1,4 +1,4 @@
-module github.com/fruworg/libretranslate-bot
+module github.com/fruworg/asciisay-bot
 
 go 1.17
 
