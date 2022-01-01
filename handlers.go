@@ -83,11 +83,9 @@ func (a *application) msgHandler(m *tbot.Message) {
 		reply := fruw[animal]
 		text := strings.TrimPrefix(m.Text, animal + " ")
 		lineLen := utf8.RuneCountInString(text) + 2
-		fmt.Println(lineLen)
 		if lineLen > 32{
 		lineLen = 32
 		}
-		fmt.Println(lineLen)
 		topLine := fmt.Sprintf(" %s ", strings.Repeat("_", lineLen))
 		textLine := fmt.Sprintf("< %s >", text)
 		bottomLine := fmt.Sprintf(" %s ", strings.Repeat("-", lineLen))
@@ -98,7 +96,7 @@ func (a *application) msgHandler(m *tbot.Message) {
 		topLine := fmt.Sprintf(" %s ", strings.Repeat("_", lineLen))
 		textLine := fmt.Sprintf("< %s >", m.Text)
 		bottomLine := fmt.Sprintf(" %s ", strings.Repeat("-", lineLen))
-		msg = fmt.Sprintf("```%s\n%s\n%s%s```", topLine, textLine, bottomLine, reply)
+		msg = fmt.Sprintf("```%s\n%s\n%s%s%s```", topLine, textLine, bottomLine, reply, lineLen)
 	}
 	a.client.SendMessage(m.Chat.ID, msg, tbot.OptParseModeMarkdown)
 }
