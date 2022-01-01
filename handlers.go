@@ -25,7 +25,7 @@ var rndmap = map[int]string{
 // Handle the /start command here
 func (a *application) startHandler(m *tbot.Message) {
 	org := ""
-	for i := 0; i =< 10; i++{
+	for i := 0; i <= 10; i++{
 		org = fmt.Sprintf("%s*%s*", org, rndmap[i])
 		if i < 10{
 			org = org + ", "}
@@ -174,8 +174,7 @@ func (a *application) msgHandler(m *tbot.Message) {
       |               '--' |   
   ____|_       ___|   |___.' 
  /_/_____/____/_______|
-		`
-	}
+		`}
 	msg := ""
 	arr := strings.Split(m.Text, " ")
     	animal := arr[0]
