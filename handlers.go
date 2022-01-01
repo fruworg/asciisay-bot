@@ -9,6 +9,17 @@ import (
 	"github.com/yanzay/tbot/v2"
 )
 
+var rndmap = map[int]string{
+		0: "cow",
+		1: "pig",
+		2: "cat",
+		3: "bat",
+		4: "bear",
+		5: "bison",
+		6: "cock",
+		7: "duck",
+		8: "camel"}
+
 // Handle the /start command here
 func (a *application) startHandler(m *tbot.Message) {
 	reply := 
@@ -25,8 +36,8 @@ func (a *application) startHandler(m *tbot.Message) {
 	       "\nСо случайным животным:\nЕсли тебе было весело, то это не военное преступление." +
 	       "\nС указанием животного:\n*cat* Если тебе было весело, то это не военное преступление.\n" +
 	       "\nВместо *cat* можно подставить любое другое животное. \nТолько не забудь про пробел, десу.\n" +
-	       "Животные: *cow*, *cat*, *pig*, *bear*, *bat.*\n" + 
-			    "\nПример ответа:\n" + "```%s```", reply)
+	       "Животные: *%s*\n" + 
+			    "\nПример ответа:\n" + "```%s```", rndmap, reply)
 	a.client.SendMessage(m.Chat.ID, msg, tbot.OptParseModeMarkdown)
 }
 
@@ -80,7 +91,6 @@ func (a *application) msgHandler(m *tbot.Message) {
          " ' "
 	`,	
 		"bear": `
-     \
    __ \       __			
   /  \.-"""-./  \
   \    -   -    /
@@ -96,13 +106,45 @@ func (a *application) msgHandler(m *tbot.Message) {
 	      |   '-.   /     / 
 	_,..._|      )_-\ \_=.\
        '-....-''------)))'=-'"''"
-	`}
-	rndmap := map[int]string{
-		0: "cow",
-		1: "pig",
-		2: "cat",
-		3: "bat",
-		4: "bear"}
+	`,	//bison by cp97
+		"bison": `
+     \
+      ((_,...,_))    
+         |o o|
+         \   /
+          ^_^
+		
+	`,	//cock by sk 
+		"cock": `
+     \
+      \  /""\      ,
+        < ^  L____/|
+         #) /'   , /
+          \ '---' /
+           ''";\)'
+             _/_Y
+		`,//duck buy hjw
+		"duck:": `
+     \  __
+      <(o )___
+       ( ._> /
+        '---' 
+		`,//camel by jgs
+		"camel": `
+     \       _
+      \  .--' |
+        /___^ |     .--.
+            ) |    /    \
+           /  |  /'      '.
+          |   '-'    /     \
+          \         |      |\
+           \    /   \      /\|
+            \  /'----'\   /
+            |||       \\ |
+            ((|        ((|
+            |||        |||
+           //_(       //_(`
+	}
 	msg := ""
 	arr := strings.Split(m.Text, " ")
     	animal := arr[0]
@@ -112,7 +154,7 @@ func (a *application) msgHandler(m *tbot.Message) {
 		msg = fmt.Sprintf("``` < %s > %s ```", text, reply)
 	} else { 
 		rand.Seed(time.Now().UnixNano())
-		rnd := (rand.Intn(5))
+		rnd := (rand.Intn(8))
 		reply := fruw[rndmap[rnd]]
 		msg = fmt.Sprintf("``` < %s > %s ```", m.Text, reply)
 	}
