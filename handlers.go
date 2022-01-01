@@ -24,7 +24,7 @@ var rndmap = map[int]string{
 func (a *application) startHandler(m *tbot.Message) {
 	org := ""
 	for i := 0; i < 9; i++{
-		org = fmt.Sprintf("*%s%s*", org, rndmap[i])
+		org = fmt.Sprintf("*%s**%s*", org, rndmap[i])
 		if i < 8{
 			org = org + ", "}
 	}
