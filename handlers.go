@@ -82,11 +82,11 @@ func (a *application) msgHandler(m *tbot.Message) {
 		reply := fruw[animal]
 		text := strings.TrimPrefix(m.Text, animal + " ")
 		textLine := fmt.Sprintf(`< %s >`, text)
-		msg = fmt.Sprintf("```%s\n%s```", textLine, reply)
+		msg = fmt.Sprintf("```%s%s```", textLine, reply)
 	} else { 
 		reply := fruw["pig"]
 		textLine := fmt.Sprintf(`< %s >`, m.Text)
-		msg = fmt.Sprintf("```%s\n%s```", textLine, reply)
+		msg = fmt.Sprintf("```%s%s```", textLine, reply)
 	}
 	a.client.SendMessage(m.Chat.ID, msg, tbot.OptParseModeMarkdown)
 }
