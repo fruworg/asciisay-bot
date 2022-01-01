@@ -24,8 +24,9 @@ var rndmap = map[int]string{
 func (a *application) startHandler(m *tbot.Message) {
 	org := ""
 	for i := 0; i < 9; i++{
+		org = fmt.Sprintf("```%s%s```", org, rndmap[i])
 		if i < 8{
-			org = org + rndmap[i] + ","}
+			org = org + ", "}
 	}
 	reply := 
 ` < Если тебе было весело, то это не военное преступление. > 
