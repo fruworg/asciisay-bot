@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"time"
 	"strings"
-	"math/rand"
+	_ "math/rand"
 	
 	"github.com/yanzay/tbot/v2"
 )
@@ -111,7 +111,7 @@ func (a *application) msgHandler(m *tbot.Message) {
 		msg = fmt.Sprintf("``` < %s > %s ```", text, reply)
 	} else { 
 		rand.Seed(time.Now().UnixNano())
-		rnd := int((rand.Intn(4)))
+		rnd := fmt.Sprintf(int(rand.Intn(4)))
 		reply := fruw[rand[rnd]]
 		msg = fmt.Sprintf("``` < %s > %s ```", m.Text, reply)
 	}
