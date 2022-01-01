@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"time"
 	"strings"
-	_ "math/rand"
+	"math/rand"
 	
 	"github.com/yanzay/tbot/v2"
 )
