@@ -109,7 +109,8 @@ func (a *application) msgHandler(m *tbot.Message) {
 		text := strings.TrimPrefix(m.Text, animal + " ")
 		msg = fmt.Sprintf("``` < %s > %s ```", text, reply)
 	} else { 
-		rnd := (rand.Intn(4))
+		rand.Seed(time.Now().UnixNano())
+		rnd := int((rand.Intn(4)))
 		reply := fruw[rand[rnd]]
 		msg = fmt.Sprintf("``` < %s > %s ```", m.Text, reply)
 	}
