@@ -112,7 +112,8 @@ func (a *application) msgHandler(m *tbot.Message) {
 	} else { 
 		rand.Seed(time.Now().UnixNano())
 		rnd := fmt.Sprintf(int(rand.Intn(4)))
-		reply := fruw[rand[rnd]]
+		random := rand[rnd]
+		reply := fruw[random]
 		msg = fmt.Sprintf("``` < %s > %s ```", m.Text, reply)
 	}
 	a.client.SendMessage(m.Chat.ID, msg, tbot.OptParseModeMarkdown)
