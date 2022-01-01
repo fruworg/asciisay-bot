@@ -18,14 +18,16 @@ var rndmap = map[int]string{
 		5: "bison",
 		6: "cock",
 		7: "duck",
-		8: "camel"}
+		8: "camel",
+	        9: "deer",
+		10: "dog"}
 
 // Handle the /start command here
 func (a *application) startHandler(m *tbot.Message) {
 	org := ""
-	for i := 0; i < 9; i++{
+	for i := 0; i =< 10; i++{
 		org = fmt.Sprintf("%s*%s*", org, rndmap[i])
-		if i < 8{
+		if i < 10{
 			org = org + ", "}
 	}
 	reply := 
@@ -76,7 +78,7 @@ func (a *application) msgHandler(m *tbot.Message) {
        ___/    '   ' ,""+ \
      (__...'      __\    |'.___.';
        (_,...-'''(_,.'__)/'.....+
-	`,	
+	`,	//aardvarks
 		"aardvarks": `
 	       _.---._    /\\       /
   	    ./'       "--'\//	   /
@@ -95,7 +97,7 @@ func (a *application) msgHandler(m *tbot.Message) {
    '\__| \___/ |__/'
         \(_|_)/
          " ' "
-	`,	
+	`,	//beer
 		"bear": `
    __ \       __			
   /  \.-"""-./  \
@@ -149,7 +151,31 @@ func (a *application) msgHandler(m *tbot.Message) {
             |||       \\ |
             ((|        ((|
             |||        |||
-           //_(       //_(`}
+           //_(       //_(
+	   	`,//deer
+		"deer": `
+    \
+     \    ))    ((
+      \  //      \\
+         \\____// |
+        ~/~    ~\/~
+       ( o/  _/o  ~
+        /  /     ,|
+       (~~~)__.-\ |
+        \'~~    | |
+         |      | |
+		`,//dog
+		"dog":`
+\
+ \    |\_/|                  
+  \   @ @ |
+   \ <>   |               _  
+     /\_   \------____ ((| |))
+      |               '--' |   
+  ____|_       ___|   |___.' 
+ /_/_____/____/_______|
+		`
+	}
 	msg := ""
 	arr := strings.Split(m.Text, " ")
     	animal := arr[0]
