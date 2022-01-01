@@ -23,7 +23,7 @@ var rndmap = map[int]string{
 // Handle the /start command here
 func (a *application) startHandler(m *tbot.Message) {
 	org := ""
-	for i=0, i < 9, i++{
+	for i := 0, i < 9, i++{
 		org = org + rndmap[i]
 	}
 	reply := 
