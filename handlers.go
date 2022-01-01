@@ -195,8 +195,8 @@ func (a *application) msgHandler(m *tbot.Message) {
                          '
 		`,//elephant by Row
 		"elephant":`
-  \  /		
-   \/    ___     _,.--.,_
+   \ /		
+    :    ___     _,.--.,_
    /  .-~   ~--"~-.   ._ "-.
   :  /      ./_    Y    "-. \
   | Y       :~     !         Y
