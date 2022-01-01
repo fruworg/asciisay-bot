@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"strings"
-	"unicode/utf8"
 
 	"github.com/yanzay/tbot/v2"
 )
