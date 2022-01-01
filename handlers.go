@@ -96,7 +96,7 @@ func (a *application) msgHandler(m *tbot.Message) {
 	_,..._|      )_-\ \_=.\
        '-....-''------)))'=-'"''"
 	`}
-	rand := map[int]string{
+	rndmap := map[int]string{
 		0: "cow",
 		1: "pig",
 		2: "cat",
@@ -112,8 +112,7 @@ func (a *application) msgHandler(m *tbot.Message) {
 	} else { 
 		rand.Seed(time.Now().UnixNano())
 		rnd := (rand.Intn(4))
-		random := rand[rnd]
-		reply := fruw[random]
+		reply := fruw[rndmap[rnd]]
 		msg = fmt.Sprintf("``` < %s > %s ```", m.Text, reply)
 	}
 	a.client.SendMessage(m.Chat.ID, msg, tbot.OptParseModeMarkdown)
