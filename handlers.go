@@ -81,10 +81,10 @@ func (a *application) msgHandler(m *tbot.Message) {
 	if fruw[animal] != "" && strings.TrimSpace(m.Text) != animal{
 		reply := fruw[animal]
 		text := strings.TrimPrefix(m.Text, animal + " ")
-		msg = fmt.Sprintf("```< %s >\n%s```", text, reply)
+		msg = fmt.Sprintf("```s1< %s > %s```", text, reply)
 	} else { 
 		reply := fruw["pig"]
-		msg = fmt.Sprintf("```< %s > \n%s```", m.Text, reply)
+		msg = fmt.Sprintf("```s1< %s > %s```", m.Text, reply)
 	}
 	a.client.SendMessage(m.Chat.ID, msg, tbot.OptParseModeMarkdown)
 }
