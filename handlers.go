@@ -20,7 +20,7 @@ func (a *application) startHandler(m *tbot.Message) {
      (__...'      __\    |'.___.';
       (_,...-'''(_,.'__)/'.....+`
 	msg := fmt.Sprintf ("\n*Привет!* Присылай сообщение и я его преобразую.\n\nПример сообщения:"+
-	       "\n_*cat* Если тебе было весело, то это не военное преступление._\n" +
+	       "\n*cat* Если тебе было весело, то это не военное преступление.\n" +
 	       "Вместо *cat* можно поставить любое другое животное. \nТолько не забудь про пробел.\n" +
 	       "\nЖивотные: *cow*, *cat*, *pig*, *bear*, *bat.*\n" + 
 			    "\nПример ответа:\n" + "```%s```", reply)
@@ -94,6 +94,12 @@ func (a *application) msgHandler(m *tbot.Message) {
 	_,..._|      )_-\ \_=.\
        '-....-''------)))'=-'"''"
 	`}
+	rand := map[int]string{
+		0: "cow",
+		1: "pig",
+		2: "cat",
+		3: "bat",
+		4: "bear}
 	msg := ""
 	arr := strings.Split(m.Text, " ")
     	animal := arr[0]
@@ -102,7 +108,8 @@ func (a *application) msgHandler(m *tbot.Message) {
 		text := strings.TrimPrefix(m.Text, animal + " ")
 		msg = fmt.Sprintf("``` < %s > %s ```", text, reply)
 	} else { 
-		reply := fruw["pig"]
+		rnd := (rand.Intn(4))
+		reply := fruw[rand[rnd]]
 		msg = fmt.Sprintf("``` < %s > %s ```", m.Text, reply)
 	}
 	a.client.SendMessage(m.Chat.ID, msg, tbot.OptParseModeMarkdown)
