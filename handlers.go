@@ -24,7 +24,7 @@ var rndmap = map[int]string{
 func (a *application) startHandler(m *tbot.Message) {
 	org := ""
 	for i := 0; i < 9; i++{
-		org = fmt.Sprintf("```%s%s```", org, rndmap[i])
+		org = fmt.Sprintf("*%s%s*", org, rndmap[i])
 		if i < 8{
 			org = org + ", "}
 	}
@@ -42,7 +42,7 @@ func (a *application) startHandler(m *tbot.Message) {
 	       "\nСо случайным животным:\nЕсли тебе было весело, то это не военное преступление." +
 	       "\nС указанием животного:\n*cat* Если тебе было весело, то это не военное преступление.\n" +
 	       "\nВместо *cat* можно подставить любое другое животное. \nТолько не забудь про пробел, десу.\n" +
-	       "Животные: *%s*.\n" + 
+	       "Животные: %s.\n" + 
 			    "\nПример ответа:\n" + "```%s```", org, reply)
 	a.client.SendMessage(m.Chat.ID, msg, tbot.OptParseModeMarkdown)
 }
