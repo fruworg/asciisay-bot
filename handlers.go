@@ -22,12 +22,14 @@ var rndmap = map[int]string{
 	        9: "deer",
 		10: "dog"}
 
+var lenmap = len(rndmap)
+
 // Handle the /start command here
 func (a *application) startHandler(m *tbot.Message) {
 	org := ""
-	for i := 0; i <= 10; i++{
+	for i := 0; i < lenmap; i++{
 		org = fmt.Sprintf("%s*%s*", org, rndmap[i])
-		if i < 10{
+		if i < lenmap-1{
 			org = org + ", "}
 	}
 	reply := 
@@ -184,7 +186,7 @@ func (a *application) msgHandler(m *tbot.Message) {
 		msg = fmt.Sprintf("``` < %s > %s ```", text, reply)
 	} else { 
 		rand.Seed(time.Now().UnixNano())
-		rnd := (rand.Intn(8))
+		rnd := (rand.Intn(lenmap))
 		reply := fruw[rndmap[rnd]]
 		msg = fmt.Sprintf("``` < %s > %s ```", m.Text, reply)
 	}
