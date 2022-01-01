@@ -9,9 +9,20 @@ import (
 
 // Handle the /start command here
 func (a *application) startHandler(m *tbot.Message) {
+	reply := 
+	``` < Если тебе было весело, то это не военное преступление. > 
+    \
+     \    v     v 
+      \   |\---/|
+       \ ( o_o  )
+          \_W__/-..----.
+       ___/    '   ' ,""+ \
+     (__...'      __\    |'.___.';
+       (_,...-'''(_,.'__)/'.....+```
 	msg := "\n*Привет!* Присылай сообщение и я его преобразую.\n\nФормат сообщения:\n*cat* Если тебе было весело, то это не военное преступление.\n" +
 	       "\nВместо *cat* можно поставить любое другое животное. \nТолько не забудь про пробел.\n" +
-	       "\nЖивотные: *cow*, *cat*, *pig*, *bear*, *bat.*"
+	       "\nЖивотные: *cow*, *cat*, *pig*, *bear*, *bat.*\n" + 
+	       "\nОтвет:" + reply
 	a.client.SendMessage(m.Chat.ID, msg, tbot.OptParseModeMarkdown)
 }
 
