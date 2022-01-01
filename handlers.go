@@ -17,28 +17,31 @@ func (a *application) startHandler(m *tbot.Message) {
 func (a *application) msgHandler(m *tbot.Message) {
 	fruw := map[string]string{
 		"cow": `
-    \   ^__^
-     \  (oo)\_______
-        (__)\       )\/\
-             ||----w |
-             ||     ||
+    \
+     \   ^__^
+      \  (oo)\_______
+         (__)\       )\/\
+              ||----w |
+              ||     ||
 	`,	//pig by jv
 		"pig": `
-    \   <'--'\>______
-     \  /. .  ''     \
-       ('')  ,        @
-        '-._,        /
-             )-)_/--( >  
-            ''''  ''''
+    \
+     \   <'--'\>______
+      \  /. .  ''     \
+        ('')  ,        @
+         '-._,        /
+              )-)_/--( >  
+             ''''  ''''
 	`,	//cat by sk
 		"cat": `
-    \    v     v	
-     \   |\---/|
-      \ ( o_o  )
-         \_W__/-..----.
-      ___/    '   ' ,""+ \
-    (__...'      __\    |'.___.';
-      (_,...-'''(_,.'__)/'.....+
+    \
+     \    v     v	
+      \   |\---/|
+       \ ( o_o  )
+          \_W__/-..----.
+       ___/    '   ' ,""+ \
+     (__...'      __\    |'.___.';
+       (_,...-'''(_,.'__)/'.....+
 	`,	
 		"aardvarks": `
 	       _.---._    /\\       /
@@ -50,6 +53,7 @@ func (a *application) msgHandler(m *tbot.Message) {
  	   "     "    "  "     
 	`,	//bat by jgs
 		"bat": `
+     \
  /\   \             /\
 / \'._ \ (\_/)   _.'/ \
 |.''._'--(o.o)--'_.''.|
@@ -59,13 +63,14 @@ func (a *application) msgHandler(m *tbot.Message) {
          " ' "
 	`,	
 		"bear": `
- __ \       __			
-/  \.-"""-./  \
-\    -   -    /
- |   o   o   |
- \  .-'''-.  /
-  '-\__Y__/-'
-     '---'
+     \
+   __ \       __			
+  /  \.-"""-./  \
+  \    -   -    /
+   |   o   o   |
+   \  .-'''-.  /
+    '-\__Y__/-'
+       '---'
 	`, 	//beaver by jgs
 		"beaver": `
 	          .="   "=._.---.
@@ -81,10 +86,10 @@ func (a *application) msgHandler(m *tbot.Message) {
 	if fruw[animal] != "" && strings.TrimSpace(m.Text) != animal{
 		reply := fruw[animal]
 		text := strings.TrimPrefix(m.Text, animal + " ")
-		msg = fmt.Sprintf("``` < %s > %s ```", text, reply)
+		msg = fmt.Sprintf("```< %s > %s ```", text, reply)
 	} else { 
 		reply := fruw["pig"]
-		msg = fmt.Sprintf("``` < %s > %s ```", m.Text, reply)
+		msg = fmt.Sprintf("```< %s > %s ```", m.Text, reply)
 	}
 	a.client.SendMessage(m.Chat.ID, msg, tbot.OptParseModeMarkdown)
 }
