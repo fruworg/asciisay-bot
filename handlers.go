@@ -208,7 +208,7 @@ func (a *application) msgHandler(m *tbot.Message) {
             (  (    |L    j 
             [nn[nn..][nn..]`}
 	msg := ""
-	arr := strings.Split(m.Text, " или ")
+	arr := strings.Split(m.Text, " ")
     	animal := arr[0]
 	if fruw[animal] != "" && strings.TrimSpace(m.Text) != animal{
 		reply := fruw[animal]
