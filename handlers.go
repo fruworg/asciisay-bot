@@ -9,7 +9,9 @@ import (
 
 // Handle the /start command here
 func (a *application) startHandler(m *tbot.Message) {
-	msg := "бебра?"
+	msg := "\n*Привет!* Присылай сообщение и я его преобразую.\n\nФормат сообщения:\n*cat* Если тебе было весело, то это не военное преступление" +
+	       "\nВместо *cat* можно поставить любое другое животное. Только не забудь про пробел." +
+	       "\Животные: *cow*, *cat*, *pig*, *bear*, *bat*"
 	a.client.SendMessage(m.Chat.ID, msg, tbot.OptParseModeMarkdown)
 }
 
