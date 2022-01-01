@@ -3,7 +3,8 @@ package main
 import (
 	"fmt"
 	"strings"
-
+	"math/rand"
+	
 	"github.com/yanzay/tbot/v2"
 )
 
@@ -99,7 +100,7 @@ func (a *application) msgHandler(m *tbot.Message) {
 		1: "pig",
 		2: "cat",
 		3: "bat",
-		4: "bear}
+		4: "bear"}
 	msg := ""
 	arr := strings.Split(m.Text, " ")
     	animal := arr[0]
