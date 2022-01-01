@@ -20,7 +20,9 @@ var rndmap = map[int]string{
 		7: "duck",
 		8: "camel",
 	        9: "deer",
-		10: "dog"}
+		10: "dog",
+		11: "dolphin",
+		12: "elephant"}
 
 var lenmap = len(rndmap)
 
@@ -176,7 +178,35 @@ func (a *application) msgHandler(m *tbot.Message) {
            |                 |  
        ____|_       ___|    / 
       /_/_____/____/_______|
-		`}
+		`,//dolphin by Morfina
+		"dolphin":`
+     \ 
+      \           ,-.
+       \         /  (  '
+        \  _.--'!   '--._
+         ,'              ''.
+   *    |!                   \
+      _.'  O      ___       ! '
+     (_.-^, __..-'  ''''--.   |
+         /,'        '    _.' /
+     '         *    .-''    |
+                   (..--^.  ' 
+                         | /
+                         '
+		`,//elephant by Row
+		"elephant":`
+      \		
+       \ ___     _,.--.,_
+      .-~   ~--"~-.   ._ "-.
+     /      ./_    Y    "-. \
+    Y       :~     !         Y
+    l       |     /         .|
+ _   \O  O-, l    /          |j
+()\___) |/   \_/";          !
+ \._____.-~\  .  ~\.      ./
+            Y_ Y_. "vr"~  T
+            (  (    |L    j 
+            [nn[nn..][nn..]`}
 	msg := ""
 	arr := strings.Split(m.Text, " ")
     	animal := arr[0]
