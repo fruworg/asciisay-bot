@@ -82,24 +82,12 @@ func (a *application) msgHandler(m *tbot.Message) {
 	if fruw[animal] != "" && strings.TrimSpace(m.Text) != animal{
 		reply := fruw[animal]
 		text := strings.TrimPrefix(m.Text, animal + " ")
-		lineLen := utf8.RuneCountInString(text) + 2
-		if lineLen > 32{
-		lineLen = 32
-		}
-		topLine := fmt.Sprintf(" %s ", strings.Repeat("_", lineLen))
 		textLine := fmt.Sprintf("< %s >", text)
-		bottomLine := fmt.Sprintf(" %s ", strings.Repeat("-", lineLen))
-		msg = fmt.Sprintf("```%s\n%s\n%s%s```", topLine, textLine, bottomLine, reply)
+		msg = fmt.Sprintf("```%s\n%s```", textLine, reply)
 	} else { 
 		reply := fruw["pig"]
-		lineLen := utf8.RuneCountInString(m.Text) + 2
-		if lineLen > 32{
-		lineLen = 32
-		}
-		topLine := fmt.Sprintf(" %s ", strings.Repeat("_", lineLen))
 		textLine := fmt.Sprintf("< %s >", m.Text)
-		bottomLine := fmt.Sprintf(" %s ", strings.Repeat("-", lineLen))
-		msg = fmt.Sprintf("```%s\n%s\n%s%s```", topLine, textLine, bottomLine, reply)
+		msg = fmt.Sprintf("```%s\n%s```", textLine, reply)
 	}
 	a.client.SendMessage(m.Chat.ID, msg, tbot.OptParseModeMarkdown)
 }
