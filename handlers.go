@@ -22,6 +22,10 @@ var rndmap = map[int]string{
 
 // Handle the /start command here
 func (a *application) startHandler(m *tbot.Message) {
+	org := ""
+	for i=0, i++, i < 9{
+		org = org + rndmap[i]
+	}
 	reply := 
 ` < Если тебе было весело, то это не военное преступление. > 
     \
