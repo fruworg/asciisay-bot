@@ -42,7 +42,7 @@ func (a *application) startHandler(m *tbot.Message) {
 	       "\nС указанием животного:\n*cat* Если тебе было весело, то это не военное преступление.\n" +
 	       "\nВместо *cat* можно подставить любое другое животное. \nТолько не забудь про пробел, десу.\n" +
 	       "Животные: *%s*.\n" + 
-			    "\nПример ответа:\n" + "```%s```", rndmap, reply)
+			    "\nПример ответа:\n" + "```%s```", org, reply)
 	a.client.SendMessage(m.Chat.ID, msg, tbot.OptParseModeMarkdown)
 }
 
