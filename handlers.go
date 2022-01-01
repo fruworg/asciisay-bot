@@ -32,7 +32,7 @@ func (a *application) msgHandler(m *tbot.Message) {
               ''''  ''''
 	`,
 		"cat": `
-	       v     v	
+       \    v     v	
    	\   |\---/|
    	 \ ( o_o  )
 	       \_v__/-..----.
