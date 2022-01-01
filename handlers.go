@@ -130,7 +130,7 @@ func (a *application) msgHandler(m *tbot.Message) {
            ''";\)'
              _/_Y
 		`,//duck buy hjw
-		"duck:": `
+		"duck": `
      \  __
       <(o )___
        ( ._> /
