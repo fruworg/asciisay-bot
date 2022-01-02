@@ -216,7 +216,7 @@ func (a *application) msgHandler(m *tbot.Message) {
     	animal := strings.ToLower(arr[0])
 	if fruw[animal] != "" && len(arr) > 1{
 		reply := fruw[animal]
-		text := strings.TrimPrefix(m.Text, animal + " ")
+		text := strings.TrimPrefix(m.Text, arr[0] + " ")
 		msg = fmt.Sprintf("```\n< %s > %s ```", text, reply)
 	} else { 
 		rand.Seed(time.Now().UnixNano())
