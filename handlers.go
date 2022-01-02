@@ -213,8 +213,8 @@ func (a *application) msgHandler(m *tbot.Message) {
             [nn[nn..][nn..]`}
 	msg := ""
 	arr := strings.Split(m.Text, " ")
-    	animal := arr[0]
-	if fruw[animal] != "" && strings.TrimSpace(m.Text) != animal{
+    	animal := strings.ToLower(arr[0])
+	if fruw[animal] != "" && len(arr) > 1{
 		reply := fruw[animal]
 		text := strings.TrimPrefix(m.Text, animal + " ")
 		msg = fmt.Sprintf("```\n< %s > %s ```", text, reply)
