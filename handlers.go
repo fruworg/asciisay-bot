@@ -9,53 +9,7 @@ import (
 	"github.com/yanzay/tbot/v2"
 )
 
-var rndmap = map[int]string{
-		0: "cow",
-		1: "pig",
-		2: "cat",
-		3: "bat",
-		4: "bear",
-		5: "bison",
-		6: "cock",
-		7: "duck",
-		8: "camel",
-	        9: "deer",
-		10: "dog",
-		11: "dolphin",
-		12: "elephant"}
-
-var lenmap = len(rndmap)
-
-// Handle the /start command here
-func (a *application) startHandler(m *tbot.Message) {
-	org := ""
-	for i := 0; i < lenmap; i++{
-		org = fmt.Sprintf("%s*%s*", org, rndmap[i])
-		if i < lenmap-1{
-			org = org + ", "}
-	}
-	reply := 
-` < Если тебе было весело, то это не военное преступление. > 
-    \
-     \    v     v 
-      \   |\---/|
-       \ ( o_o  )
-          \_W__/-..----.
-       ___/    '   ' ,""+\
-     (__...'      __\    |'.___.';
-      (_,...-'''(_,.'__)/'.....+`
-	msg := fmt.Sprintf ("\n*Привет!* Присылай сообщение и я его преобразую.\n" + 
-	       "\nСо случайным животным:\nЕсли тебе было весело, то это не военное преступление.\n" +
-	       "\nС указанием животного:\n*cat* Если тебе было весело, то это не военное преступление.\n" +
-	       "\nВместо *cat* можно подставить любое другое животное.\nТолько не забудь про пробел, десу.\n" +
-	       "\nЖивотные: %s.\n" + 
-			    "\nПример ответа:\n" + "```%s```", org, reply)
-	a.client.SendMessage(m.Chat.ID, msg, tbot.OptParseModeMarkdown)
-}
-
-// Handle the msg command here
-func (a *application) msgHandler(m *tbot.Message) {
-	fruw := map[string]string{
+var fruw = map[string]string{
 		"cow": `
  \ /
   :   ^__^
@@ -211,6 +165,43 @@ func (a *application) msgHandler(m *tbot.Message) {
             Y_ Y_. "vr"~  T
             (  (    |L    j 
             [nn[nn..][nn..]`}
+
+var rndmap = map[int]string{
+		0: "cow",
+		1: "pig",
+		2: "cat",
+		3: "bat",
+		4: "bear",
+		5: "bison",
+		6: "cock",
+		7: "duck",
+		8: "camel",
+	        9: "deer",
+		10: "dog",
+		11: "dolphin",
+		12: "elephant"}
+
+var lenmap = len(rndmap)
+
+// Handle the /start command here
+func (a *application) startHandler(m *tbot.Message) {
+	org := ""
+	for i := 0; i < lenmap; i++{
+		org = fmt.Sprintf("%s*%s*", org, rndmap[i])
+		if i < lenmap-1{
+			org = org + ", "}
+	}
+	msg := fmt.Sprintf ("\n*Привет!* Присылай сообщение и я его преобразую.\n" + 
+	       "\nСо случайным животным:\nЕсли тебе было весело, то это не военное преступление.\n" +
+	       "\nС указанием животного:\n*cat* Если тебе было весело, то это не военное преступление.\n" +
+	       "\nВместо *cat* можно подставить любое другое животное.\nТолько не забудь про пробел, десу.\n" +
+	       "\nЖивотные: %s.\n" + 
+			    "\nПример ответа:\n" + "```%s```", org, fruw[cat])
+	a.client.SendMessage(m.Chat.ID, msg, tbot.OptParseModeMarkdown)
+}
+
+// Handle the msg command here
+func (a *application) msgHandler(m *tbot.Message) {
 	msg := ""
 	arr := strings.Split(m.Text, " ")
     	animal := strings.ToLower(arr[0])
