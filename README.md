@@ -1,5 +1,4 @@
 ### [t.me/asciisaybot](https://t.me/asciisaybot) 
-[asciiart.eu](https://www.asciiart.eu/animals/) + [tbot](https://github.com/yanzay/tbot) <br />
 ``` 
                                .__.__                              ___.           __    
           _____    ______ ____ |__|__| ___________  ___.__.        \_ |__   _____/  |_  
@@ -8,6 +7,11 @@
           (____  /____  >\___  >__|__/____  >(____  / ____|         |___  /\____/|__|   
                \/     \/     \/           \/      \/\/                  \/           
 ```
+Вариация cowsay, сделанная телеграм-ботом. В арсенале 33 животного.
+Животного можно выбрать самому или довериться случаю.
+
+Сделано при помощи:
+[asciiart.eu](https://www.asciiart.eu/animals/) + [tbot](https://github.com/yanzay/tbot) <br />
 ### Случайное животное
 ```
                                                                                  user:
