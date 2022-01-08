@@ -220,8 +220,7 @@ var fruw = map[string]string{
      )  _/
     (  (,.
      '-.-'
-	`
-}
+	`}
 
 var rndmap = map[int]string{
 	0:  "cow",
@@ -242,7 +241,7 @@ var rndmap = map[int]string{
 	15: "shark",
 	16: "seahorse",
 	17: "aardvarks",
-	18: "beaver"	
+	18: "beaver",
 }
 
 var lenmap = len(rndmap)
