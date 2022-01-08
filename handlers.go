@@ -96,11 +96,11 @@ var fruw = map[string]string{
        ''";\)'
          _/_Y
 		`, //duck buy hjw
-	"duck": `
-     \  __
-      <(o )___
-       ( ._> /
-        '---' 
+	"duck": `	
+ \ / __
+   <(o )___
+    ( ._> /
+     '---' 
 		`, //camel by jgs
 	"camel": `
  \ / 
